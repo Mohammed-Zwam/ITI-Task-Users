@@ -1,0 +1,43 @@
+<h1 class="page-title p-3 display-3">Users</h1>
+
+<form class="form-inline my-2 my-lg-0 d-flex align-items-center gap-2 p-4 d-block w-75 m-auto input-group-lg">
+  <input class="form-control mr-sm-0 " type="search" placeholder="Search By Email" aria-label="Search"
+    name="searchInput" [(ngModel)]="searchVal">
+  <button class="btn btn-warning my-2 " type="submit" (click)="searchHandler()">Search</button>
+  @if(isVisible) {
+  <button class="btn btn-danger my-2 " type="submit" (click)="resetHandler()">Reset</button>
+  }
+</form>
+
+
+<!-- <div class="user-card">
+    {{username}}
+    <img [src]="imgUrl" />
+    <h1>Hello, {{inputVal}}</h1>
+</div> -->
+
+<div class="users-container row w-100 align-items-center justify-content-center m-auto gap-4 pb-5">
+  @for (user of users; track user.id) {
+  <div class="user-card p-4">
+    <img class="p-2 d-flex align-items-center justify-content-center mb-3  m-auto " [src]="user.image"
+      alt="User profile image" />
+    <div class="mb-4 d-flex align-items-center justify-content-center">
+      <span class="badge fs-5  m-auto" [ngClass]="{
+    'text-bg-danger': user.role === 'admin',
+    'text-bg-success': user.role === 'user',
+    'text-bg-warning': user.role !== 'admin' && user.role !== 'user'
+    }">{{user.role}}</span>
+    </div>
+    <p class=" username fs-5"><span class="label">Username:</span> {{user.username}}</p>
+    <p class="email fs-5"><span class="label">Email:</span> {{user.email}}</p>
+    <p class="phone fs-5"><span class="label">Phone Number:</span> {{user.phone}}</p>
+    <p class="birthdate fs-5"><span class="label">Birth Date:</span> {{user.birthDate}}</p>
+  </div>
+  } @empty {
+
+  <div class="alert alert-warning w-75 fs-3" role="alert">
+    There are no items.
+  </div>
+  }
+
+</div>

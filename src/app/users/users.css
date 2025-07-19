@@ -1,0 +1,42 @@
+.page-title {
+  background-image: linear-gradient(to left, orange 20%, rgb(191, 105, 0) 50%, rgb(69, 38, 0) 95%);
+  color: white;
+}
+
+button:focus, input:focus {
+  color: black;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem orange;
+  border-color: orangered;
+}
+
+
+.user-card {
+  background-color: #eee;
+  border-radius: 30px;
+  width: fit-content;
+  width: 450px;
+  height: 450px;
+  max-width: 100%;
+  border: 2px solid darkorange;
+}
+
+
+.label {
+  color: rgb(207, 114, 0);
+  font-weight: bold;
+}
+
+img {
+  border: 3px solid darkorange;
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;
+  transform: scale(.8);
+}
+
+.alert-warning {
+  background-color: darkorange;
+  color: white;
+  font-weight: bold;
+}
